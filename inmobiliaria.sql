@@ -47,8 +47,7 @@ CREATE TABLE public."Inmuebles" (
 	"Precio" bigint NOT NULL,
 	"Antiguedad" integer NOT NULL,
 	"Id_categoria" smallint,
-	CONSTRAINT "Inmueble_pk" PRIMARY KEY ("Id_inmueble"),
-	CONSTRAINT "Inmueble_uq" UNIQUE ("Id_categoria")
+	CONSTRAINT "Inmueble_pk" PRIMARY KEY ("Id_inmueble")
 
 );
 -- ddl-end --
@@ -121,6 +120,7 @@ CREATE TABLE public."Ventas" (
 	"Fecha" date NOT NULL,
 	"Id_empleado" smallint,
 	"Id_carrito" smallint,
+	"Id_empleado1" smallint,
 	CONSTRAINT "Ventas_pk" PRIMARY KEY ("Num_venta"),
 	CONSTRAINT "Ventas_uq" UNIQUE ("Id_carrito")
 
@@ -149,11 +149,9 @@ CREATE TABLE public."Empleados" (
 	"Id_empleado" smallint NOT NULL DEFAULT nextval('public."Empleados_Id_empleado_seq"'::regclass),
 	"Nombre" character varying(50) NOT NULL,
 	"Apellido" character varying(50) NOT NULL,
-	"Nom_cargo" character varying(50) NOT NULL,
 	"Cedula_empleado" bigint NOT NULL,
-	"Nom_cargo1" character varying(50),
-	CONSTRAINT "Empleados_pk" PRIMARY KEY ("Id_empleado"),
-	CONSTRAINT "Empleados_uq" UNIQUE ("Nom_cargo")
+	"Nom_cargo" character varying(50),
+	CONSTRAINT "Empleados_pk" PRIMARY KEY ("Id_empleado")
 
 );
 -- ddl-end --
@@ -199,10 +197,24 @@ CREATE TABLE public."Extras" (
 -- ALTER TABLE public."Extras" OWNER TO postgres;
 -- ddl-end --
 
--- object: "Categoria_fk" | type: CONSTRAINT --
--- ALTER TABLE public."Inmuebles" DROP CONSTRAINT IF EXISTS "Categoria_fk" CASCADE;
-ALTER TABLE public."Inmuebles" ADD CONSTRAINT "Categoria_fk" FOREIGN KEY ("Id_categoria")
+-- object: "Categorias_fk" | type: CONSTRAINT --
+-- ALTER TABLE public."Inmuebles" DROP CONSTRAINT IF EXISTS "Categorias_fk" CASCADE;
+ALTER TABLE public."Inmuebles" ADD CONSTRAINT "Categorias_fk" FOREIGN KEY ("Id_categoria")
 REFERENCES public."Categorias" ("Id_categoria") MATCH FULL
+ON DELETE SET NULL ON UPDATE CASCADE;
+-- ddl-end --
+
+-- object: "Empleados_fk" | type: CONSTRAINT --
+-- ALTER TABLE public."Ventas" DROP CONSTRAINT IF EXISTS "Empleados_fk" CASCADE;
+ALTER TABLE public."Ventas" ADD CONSTRAINT "Empleados_fk" FOREIGN KEY ("Id_empleado1")
+REFERENCES public."Empleados" ("Id_empleado") MATCH FULL
+ON DELETE SET NULL ON UPDATE CASCADE;
+-- ddl-end --
+
+-- object: "Cargos_empleado_fk" | type: CONSTRAINT --
+-- ALTER TABLE public."Empleados" DROP CONSTRAINT IF EXISTS "Cargos_empleado_fk" CASCADE;
+ALTER TABLE public."Empleados" ADD CONSTRAINT "Cargos_empleado_fk" FOREIGN KEY ("Nom_cargo")
+REFERENCES public."Cargos_empleado" ("Nom_cargo") MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 -- ddl-end --
 
@@ -217,20 +229,6 @@ ON DELETE SET NULL ON UPDATE CASCADE;
 -- ALTER TABLE public."Ventas" DROP CONSTRAINT IF EXISTS "Carritos_compra_fk" CASCADE;
 ALTER TABLE public."Ventas" ADD CONSTRAINT "Carritos_compra_fk" FOREIGN KEY ("Id_carrito")
 REFERENCES public."Carritos_compra" ("Id_carrito") MATCH FULL
-ON DELETE SET NULL ON UPDATE CASCADE;
--- ddl-end --
-
--- object: "Empleados_fk" | type: CONSTRAINT --
--- ALTER TABLE public."Ventas" DROP CONSTRAINT IF EXISTS "Empleados_fk" CASCADE;
-ALTER TABLE public."Ventas" ADD CONSTRAINT "Empleados_fk" FOREIGN KEY ("Id_empleado")
-REFERENCES public."Empleados" ("Id_empleado") MATCH FULL
-ON DELETE SET NULL ON UPDATE CASCADE;
--- ddl-end --
-
--- object: "Cargo_empleado_fk" | type: CONSTRAINT --
--- ALTER TABLE public."Empleados" DROP CONSTRAINT IF EXISTS "Cargo_empleado_fk" CASCADE;
-ALTER TABLE public."Empleados" ADD CONSTRAINT "Cargo_empleado_fk" FOREIGN KEY ("Nom_cargo")
-REFERENCES public."Cargos_empleado" ("Nom_cargo") MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 -- ddl-end --
 
