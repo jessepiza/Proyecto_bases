@@ -16,7 +16,7 @@
 -- 	TABLESPACE = pg_default
 -- 	OWNER = postgres;
 -- -- ddl-end --
--- 
+--
 
 -- object: public."Clientes" | type: TABLE --
 -- DROP TABLE IF EXISTS public."Clientes" CASCADE;
@@ -254,5 +254,3 @@ ALTER TABLE public."Extras" ADD CONSTRAINT "Inmueble_fk" FOREIGN KEY ("Id_inmueb
 REFERENCES public."Inmuebles" ("Id_inmueble") MATCH FULL
 ON DELETE RESTRICT ON UPDATE CASCADE;
 -- ddl-end --
-
-

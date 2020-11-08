@@ -16,7 +16,7 @@
 -- 	TABLESPACE = pg_default
 -- 	OWNER = postgres;
 -- -- ddl-end --
--- 
+--
 
 -- object: public."Clientes" | type: TABLE --
 -- DROP TABLE IF EXISTS public."Clientes" CASCADE;
@@ -40,7 +40,7 @@ CREATE TABLE public."Inmuebles" (
 	"Id_inmueble" smallint NOT NULL,
 	"Direccion_inmueble" character varying(50) NOT NULL,
 	"Sector" character varying(50) NOT NULL,
-	"Area (metros)" numeric(8,3) NOT NULL,
+	"Area" numeric(8,3) NOT NULL,
 	"Numero_habitaciones" smallint,
 	"Numero_baños" smallint,
 	"Estrato" smallint NOT NULL,
@@ -121,7 +121,8 @@ CREATE TABLE public."Ventas" (
 	"Fecha" date NOT NULL,
 	"Id_empleado" smallint,
 	"Id_carrito" smallint,
-	CONSTRAINT "Ventas_pk" PRIMARY KEY ("Num_venta")
+	CONSTRAINT "Ventas_pk" PRIMARY KEY ("Num_venta"),
+	CONSTRAINT "Ventas_uq" UNIQUE ("Id_carrito")
 
 );
 -- ddl-end --
@@ -198,18 +199,6 @@ CREATE TABLE public."Extras" (
 -- ALTER TABLE public."Extras" OWNER TO postgres;
 -- ddl-end --
 
--- object: "Carritos_compra_fk" | type: CONSTRAINT --
--- ALTER TABLE public."Ventas" DROP CONSTRAINT IF EXISTS "Carritos_compra_fk" CASCADE;
-ALTER TABLE public."Ventas" ADD CONSTRAINT "Carritos_compra_fk" FOREIGN KEY ("Id_carrito")
-REFERENCES public."Carritos_compra" ("Id_carrito") MATCH FULL
-ON DELETE SET NULL ON UPDATE CASCADE;
--- ddl-end --
-
--- object: "Ventas_uq" | type: CONSTRAINT --
--- ALTER TABLE public."Ventas" DROP CONSTRAINT IF EXISTS "Ventas_uq" CASCADE;
-ALTER TABLE public."Ventas" ADD CONSTRAINT "Ventas_uq" UNIQUE ("Id_carrito");
--- ddl-end --
-
 -- object: "Categoria_fk" | type: CONSTRAINT --
 -- ALTER TABLE public."Inmuebles" DROP CONSTRAINT IF EXISTS "Categoria_fk" CASCADE;
 ALTER TABLE public."Inmuebles" ADD CONSTRAINT "Categoria_fk" FOREIGN KEY ("Id_categoria")
@@ -221,6 +210,13 @@ ON DELETE SET NULL ON UPDATE CASCADE;
 -- ALTER TABLE public."Carritos_compra" DROP CONSTRAINT IF EXISTS "Cliente_fk" CASCADE;
 ALTER TABLE public."Carritos_compra" ADD CONSTRAINT "Cliente_fk" FOREIGN KEY ("Cedula_ciudadania")
 REFERENCES public."Clientes" ("Cedula_ciudadania") MATCH FULL
+ON DELETE SET NULL ON UPDATE CASCADE;
+-- ddl-end --
+
+-- object: "Carritos_compra_fk" | type: CONSTRAINT --
+-- ALTER TABLE public."Ventas" DROP CONSTRAINT IF EXISTS "Carritos_compra_fk" CASCADE;
+ALTER TABLE public."Ventas" ADD CONSTRAINT "Carritos_compra_fk" FOREIGN KEY ("Id_carrito")
+REFERENCES public."Carritos_compra" ("Id_carrito") MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 -- ddl-end --
 
@@ -258,5 +254,3 @@ ALTER TABLE public."Extras" ADD CONSTRAINT "Inmueble_fk" FOREIGN KEY ("Id_inmueb
 REFERENCES public."Inmuebles" ("Id_inmueble") MATCH FULL
 ON DELETE RESTRICT ON UPDATE CASCADE;
 -- ddl-end --
-
-
