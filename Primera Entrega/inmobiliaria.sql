@@ -89,7 +89,7 @@ CREATE TABLE public."Carritos_compra" (
 	"Fecha_ingreso" date,
 	"Fecha_caducidad" date NOT NULL,
 	"Cedula_ciudadania" integer,
-	checkout bool,
+	checkout boolean,
 	CONSTRAINT "Carrito_compra_pk" PRIMARY KEY ("Id_carrito"),
 	CONSTRAINT "Carrito_compra_uq" UNIQUE ("Cedula_ciudadania")
 
@@ -119,11 +119,9 @@ CREATE TABLE public."Ventas" (
 	"Pago_inicial" integer NOT NULL,
 	"Pago_final" integer NOT NULL,
 	"Fecha" date NOT NULL,
-	"Id_carrito" smallint,
 	"Id_empleado" smallint,
-	"Id_carrito_Carritos_compra" smallint,
-	CONSTRAINT "Ventas_pk" PRIMARY KEY ("Num_venta"),
-	CONSTRAINT "Ventas_uq" UNIQUE ("Id_carrito")
+	"Id_carrito" smallint,
+	CONSTRAINT "Ventas_pk" PRIMARY KEY ("Num_venta")
 
 );
 -- ddl-end --
@@ -202,14 +200,14 @@ CREATE TABLE public."Extras" (
 
 -- object: "Carritos_compra_fk" | type: CONSTRAINT --
 -- ALTER TABLE public."Ventas" DROP CONSTRAINT IF EXISTS "Carritos_compra_fk" CASCADE;
-ALTER TABLE public."Ventas" ADD CONSTRAINT "Carritos_compra_fk" FOREIGN KEY ("Id_carrito_Carritos_compra")
+ALTER TABLE public."Ventas" ADD CONSTRAINT "Carritos_compra_fk" FOREIGN KEY ("Id_carrito")
 REFERENCES public."Carritos_compra" ("Id_carrito") MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 -- ddl-end --
 
--- object: "Ventas_uq1" | type: CONSTRAINT --
--- ALTER TABLE public."Ventas" DROP CONSTRAINT IF EXISTS "Ventas_uq1" CASCADE;
-ALTER TABLE public."Ventas" ADD CONSTRAINT "Ventas_uq1" UNIQUE ("Id_carrito_Carritos_compra");
+-- object: "Ventas_uq" | type: CONSTRAINT --
+-- ALTER TABLE public."Ventas" DROP CONSTRAINT IF EXISTS "Ventas_uq" CASCADE;
+ALTER TABLE public."Ventas" ADD CONSTRAINT "Ventas_uq" UNIQUE ("Id_carrito");
 -- ddl-end --
 
 -- object: "Categoria_fk" | type: CONSTRAINT --
