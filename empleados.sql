@@ -27,4 +27,4 @@ INSERT INTO PUBLIC. "Empleados"("Id_empleado", "Nombre", "Apellido", "Nom_cargo"
 VALUES(108, 'Diana', 'Romero', 'Domiciliario', 100365478);
 
 INSERT INTO PUBLIC. "Empleados"("Id_empleado", "Nombre", "Apellido", "Nom_cargo", "Cedula_empleado")
-VALUES(109, 'Sara', 'Zuleta', 'Administradora', 104512958);
+VALUES(109, 'Sara', 'Zuleta', 'Administrador', 104512958);
