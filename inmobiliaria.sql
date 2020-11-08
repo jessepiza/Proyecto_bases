@@ -16,17 +16,17 @@
 -- 	TABLESPACE = pg_default
 -- 	OWNER = postgres;
 -- -- ddl-end --
---
+-- 
 
 -- object: public."Clientes" | type: TABLE --
 -- DROP TABLE IF EXISTS public."Clientes" CASCADE;
 CREATE TABLE public."Clientes" (
-	"Cedula_ciudadania" integer NOT NULL,
+	"Cedula_ciudadania" bigint NOT NULL,
 	"Nombre" character varying(50) NOT NULL,
 	"Apellido" character varying(50) NOT NULL,
 	"Direccion" character varying(50) NOT NULL,
 	"Ciudad" character varying(50) NOT NULL,
-	"Numero_telefono" integer NOT NULL,
+	"Numero_telefono" bigint NOT NULL,
 	CONSTRAINT "Cliente_pk" PRIMARY KEY ("Cedula_ciudadania")
 
 );
@@ -44,7 +44,7 @@ CREATE TABLE public."Inmuebles" (
 	"Numero_habitaciones" smallint,
 	"Numero_baños" smallint,
 	"Estrato" smallint NOT NULL,
-	"Precio" integer NOT NULL,
+	"Precio" bigint NOT NULL,
 	"Antiguedad" integer NOT NULL,
 	"Id_categoria" smallint,
 	CONSTRAINT "Inmueble_pk" PRIMARY KEY ("Id_inmueble"),
@@ -88,7 +88,7 @@ CREATE TABLE public."Carritos_compra" (
 	"Num_item" smallint NOT NULL,
 	"Fecha_ingreso" date,
 	"Fecha_caducidad" date NOT NULL,
-	"Cedula_ciudadania" integer,
+	"Cedula_ciudadania" bigint,
 	checkout boolean,
 	CONSTRAINT "Carrito_compra_pk" PRIMARY KEY ("Id_carrito"),
 	CONSTRAINT "Carrito_compra_uq" UNIQUE ("Cedula_ciudadania")
@@ -116,8 +116,8 @@ CREATE SEQUENCE public."Ventas_Num_venta_seq"
 -- DROP TABLE IF EXISTS public."Ventas" CASCADE;
 CREATE TABLE public."Ventas" (
 	"Num_venta" smallint NOT NULL DEFAULT nextval('public."Ventas_Num_venta_seq"'::regclass),
-	"Pago_inicial" integer NOT NULL,
-	"Pago_final" integer NOT NULL,
+	"Pago_inicial" bigint NOT NULL,
+	"Pago_final" bigint NOT NULL,
 	"Fecha" date NOT NULL,
 	"Id_empleado" smallint,
 	"Id_carrito" smallint,
@@ -150,7 +150,7 @@ CREATE TABLE public."Empleados" (
 	"Nombre" character varying(50) NOT NULL,
 	"Apellido" character varying(50) NOT NULL,
 	"Nom_cargo" character varying(50) NOT NULL,
-	"Cedula_empleado" integer NOT NULL,
+	"Cedula_empleado" bigint NOT NULL,
 	"Nom_cargo1" character varying(50),
 	CONSTRAINT "Empleados_pk" PRIMARY KEY ("Id_empleado"),
 	CONSTRAINT "Empleados_uq" UNIQUE ("Nom_cargo")
@@ -254,3 +254,5 @@ ALTER TABLE public."Extras" ADD CONSTRAINT "Inmueble_fk" FOREIGN KEY ("Id_inmueb
 REFERENCES public."Inmuebles" ("Id_inmueble") MATCH FULL
 ON DELETE RESTRICT ON UPDATE CASCADE;
 -- ddl-end --
+
+
