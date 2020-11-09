@@ -189,7 +189,7 @@ CREATE TABLE public."Extras" (
 	"Nombre_extra" varchar(45) NOT NULL,
 	"Cantidad" smallint NOT NULL,
 	"Id_inmueble" smallint,
-	CONSTRAINT "Extras_pk" PRIMARY KEY ("Id_extra")
+	CONSTRAINT "Extras_pk" PRIMARY KEY ("Id_extra", "Id_inmueble")
 
 );
 -- ddl-end --
