@@ -186,7 +186,7 @@ CREATE TABLE public."many_Inmueble_has_many_Carrito_compra" (
 -- DROP TABLE IF EXISTS public."Extras" CASCADE;
 CREATE TABLE public."Extras" (
 	"Id_extra" smallint NOT NULL,
-	"Nombre_extra" smallint NOT NULL,
+	"Nombre_extra" varchar(45) NOT NULL,
 	"Cantidad" smallint NOT NULL,
 	"Id_inmueble" smallint,
 	CONSTRAINT "Extras_pk" PRIMARY KEY ("Id_extra")
