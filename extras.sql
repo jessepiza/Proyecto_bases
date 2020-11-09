@@ -304,7 +304,7 @@ INSERT INTO PUBLIC. "Extras"("Id_extra","Nombre_extra", "Cantidad", "Id_inmueble
 VALUES(13, 'Cuarto de ropas', 1, 19);
 
 INSERT INTO PUBLIC. "Extras"("Id_extra","Nombre_extra", "Cantidad", "Id_inmueble")
-VALUES(14, 'Patio', 2, 17);
+VALUES(14, 'Patio', 2, 18);
 
 INSERT INTO PUBLIC. "Extras"("Id_extra","Nombre_extra", "Cantidad", "Id_inmueble")
 VALUES(4, 'Balcon', 4, 19);
