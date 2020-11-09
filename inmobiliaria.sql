@@ -187,6 +187,8 @@ CREATE TABLE public."many_Inmueble_has_many_Carrito_compra" (
 CREATE TABLE public."Extras" (
 	"Id_extra" smallint NOT NULL,
 	"Nombre_extra" smallint NOT NULL,
+	"Cantidad" smallint NOT NULL,
+	"Id_inmueble" smallint,
 	CONSTRAINT "Extras_pk" PRIMARY KEY ("Id_extra")
 
 );
@@ -194,17 +196,11 @@ CREATE TABLE public."Extras" (
 -- ALTER TABLE public."Extras" OWNER TO postgres;
 -- ddl-end --
 
--- object: public."many_Extras_has_many_Inmuebles" | type: TABLE --
--- DROP TABLE IF EXISTS public."many_Extras_has_many_Inmuebles" CASCADE;
-CREATE TABLE public."many_Extras_has_many_Inmuebles" (
-	"Id_extra_Extras" smallint NOT NULL,
-	"Id_inmueble_Inmuebles" smallint NOT NULL,
-	"Cantidad" smallint NOT NULL,
-	CONSTRAINT "many_Extras_has_many_Inmuebles_pk" PRIMARY KEY ("Id_extra_Extras","Id_inmueble_Inmuebles")
-
-);
--- ddl-end --
--- ALTER TABLE public."many_Extras_has_many_Inmuebles" OWNER TO postgres;
+-- object: "Inmuebles_fk" | type: CONSTRAINT --
+-- ALTER TABLE public."Extras" DROP CONSTRAINT IF EXISTS "Inmuebles_fk" CASCADE;
+ALTER TABLE public."Extras" ADD CONSTRAINT "Inmuebles_fk" FOREIGN KEY ("Id_inmueble")
+REFERENCES public."Inmuebles" ("Id_inmueble") MATCH FULL
+ON DELETE SET NULL ON UPDATE CASCADE;
 -- ddl-end --
 
 -- object: "Categorias_fk" | type: CONSTRAINT --
@@ -253,20 +249,6 @@ ON DELETE RESTRICT ON UPDATE CASCADE;
 -- ALTER TABLE public."many_Inmueble_has_many_Carrito_compra" DROP CONSTRAINT IF EXISTS "Carrito_compra_fk" CASCADE;
 ALTER TABLE public."many_Inmueble_has_many_Carrito_compra" ADD CONSTRAINT "Carrito_compra_fk" FOREIGN KEY ("Id_carrito_Carrito_compra")
 REFERENCES public."Carritos_compra" ("Id_carrito") MATCH FULL
-ON DELETE RESTRICT ON UPDATE CASCADE;
--- ddl-end --
-
--- object: "Extras_fk" | type: CONSTRAINT --
--- ALTER TABLE public."many_Extras_has_many_Inmuebles" DROP CONSTRAINT IF EXISTS "Extras_fk" CASCADE;
-ALTER TABLE public."many_Extras_has_many_Inmuebles" ADD CONSTRAINT "Extras_fk" FOREIGN KEY ("Id_extra_Extras")
-REFERENCES public."Extras" ("Id_extra") MATCH FULL
-ON DELETE RESTRICT ON UPDATE CASCADE;
--- ddl-end --
-
--- object: "Inmuebles_fk" | type: CONSTRAINT --
--- ALTER TABLE public."many_Extras_has_many_Inmuebles" DROP CONSTRAINT IF EXISTS "Inmuebles_fk" CASCADE;
-ALTER TABLE public."many_Extras_has_many_Inmuebles" ADD CONSTRAINT "Inmuebles_fk" FOREIGN KEY ("Id_inmueble_Inmuebles")
-REFERENCES public."Inmuebles" ("Id_inmueble") MATCH FULL
 ON DELETE RESTRICT ON UPDATE CASCADE;
 -- ddl-end --
 
