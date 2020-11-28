@@ -27,7 +27,9 @@ SECRET_KEY = 'ocfxhjoj-ctk=7sfq3-0v^5i0+0804mvw^0-89bov+a)l37j#9'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+LOGIN_REDIRECT_URL = "dashboard"
+LOGIN_URL = "login"
+LOGOUT_URL = "logout"
 
 # Application definition
 
@@ -40,8 +42,6 @@ INSTALLED_APPS = [
     'tienda_virtual.apps.TiendaVirtualConfig',
     'django.contrib.admin',
 ]
-
-ROOT_URLCONF = 'artemisa_inmobiliaria.urls'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -126,7 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static-files')
 
-#MEDIA_URL = '/media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

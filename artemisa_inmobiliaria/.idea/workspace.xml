@@ -20,36 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee720fc5-6d03-475e-a2d5-7ec9cb6e50c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artemisa_inmobiliaria.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artemisa_inmobiliaria.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4a9133ea-8715-4e58-b026-c7a8a6f52caa.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4a9133ea-8715-4e58-b026-c7a8a6f52caa/storage_v2/_src_/database/artemisa_inmobiliaria.p1AfoQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4a9133ea-8715-4e58-b026-c7a8a6f52caa/storage_v2/_src_/database/artemisa_inmobiliaria.p1AfoQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4a9133ea-8715-4e58-b026-c7a8a6f52caa/storage_v2/_src_/database/artemisa_inmobiliaria.p1AfoQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4a9133ea-8715-4e58-b026-c7a8a6f52caa/storage_v2/_src_/database/artemisa_inmobiliaria.p1AfoQ/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artemisa_inmobiliaria/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/artemisa_inmobiliaria/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artemisa_inmobiliaria/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/artemisa_inmobiliaria/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/static/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/templates/base_generic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/templates/registration/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logofinal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/logofinal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/logofinal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/logofinal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/logofinal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda_virtual/templates/tienda_virtual/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda_virtual/templates/tienda_virtual/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda_virtual/templates/tienda_virtual/inmuebles.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda_virtual/templates/tienda_virtual/inmuebles.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -64,7 +51,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../artemisa_inmobiliaria2" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Pagina web" />
   </component>
   <component name="RunManager">
     <configuration name="artemisa_inmobiliaria" type="Python.DjangoServer" factoryName="Django server">
@@ -99,7 +86,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606513314408</updated>
-      <workItem from="1606513315505" duration="14356000" />
+      <workItem from="1606513315505" duration="18034000" />
+      <workItem from="1606534160946" duration="3730000" />
     </task>
     <servers />
   </component>
@@ -116,15 +104,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="446" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606520095881">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="446" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1606520095881" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1606513803286">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1606535535141">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606513803286" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606535535141" />
   </component>
 </project>

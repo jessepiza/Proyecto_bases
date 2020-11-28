@@ -1,47 +1,78 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artemisa Inmobiliaria</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/product/">
-    <style>
-        .bd-placeholder-img {
-            font-size: 2rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 1000px) {
-            .bd-placeholder-img-lg {
-                font-size: 5rem;
-            }
-            .navbar{
-                height: 100px;
-                font-size: 3rem;
-                font-family: "courier-new", monospace;
-                padding: 40px 0 0 0;
-            }
-        }
-
-    </style>
-
+    <link rel="shortcut icon" href="{% static  'media/logofinal.png'%}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static  'css/style.css'%}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: lavender">
-    <div>
-        <nav class="navbar navbar-light" style="background-color: #b676ef">
-            <a href ="{% url 'index' %}"  style="text-decoration:none">Inicio</a>
-            <a href="{% url 'inmuebles' %}" style="text-decoration:none">Productos</a>
-            <a href="{% url 'presentacion' %}" style="text-decoration:none">¿Quiénes somos?</a>
-            <a href="{% url 'contacto' %}" style="text-decoration:none">Contacto</a>
-            <a href="{% url 'login' %}" style="text-decoration:none">Ingreso</a>
+<body>
+    <header>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#Productos">Productos</a>
+            <a href="#">¿Quiénes somos?</a>
+            <a href="#">Contacto</a>
+            <a href="{% url 'login' %}">Iniciar sesión</a>
         </nav>
-    </div>
-    <div class="img1">
-      <img src= "https://raw.githubusercontent.com/andreti03/Decasports/master/static/IMG/bolas-de-ping-pong-ttb-900c-40-3-x4-blancas.jpg" width=  "100%" height="100%"/>
-    </div>
+        <section class="textos-header">
+            <h1>Artemisa Inmobiliaria</h1>
+            <h2>Con una pagina web potente</h2>
+        </section>
+        <div class = "wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+    </header>
+        <main>
+        <section class = "contenedor sobre-nosotros">
+            <h2 class="titulo">Nuestro producto</h2>
+            <div id="Sobre nosotros">
+                <img src="{%static 'media/logofinal.png'%}" alt="" class="imagen-about-us">
+                <div class="contenedor-textos">
+                    <h3><span>1</span>Los mejores productos</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse magnam perferendis ducimus voluptatem explicabo nulla assumenda fugit, et possimus eveniet libero dolores repellat quae provident! Minima natus similique voluptatem numquam.</p>
+                    <h3><span>2</span>Los mejores productos</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse magnam perferendis ducimus voluptatem explicabo nulla assumenda fugit, et possimus eveniet libero dolores repellat quae provident! Minima natus similique voluptatem numquam.</p>
+                </div>
+            </div>
+        </section>
+        <section class="portafolio">
+            <div class="contenedor">
+                <h2 class="titulo">Portafolio</h2>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img src= alt="">
+                        <div class="hover-galeria">
+                            <img src="img/icono.jpeg" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/3.jpeg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/icono.jpeg" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/4.jpeg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/icono.jpeg" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/5.jpeg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/icono.jpeg" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
