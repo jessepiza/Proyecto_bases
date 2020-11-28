@@ -21,14 +21,19 @@
   <component name="ChangeListManager">
     <list default="true" id="ee720fc5-6d03-475e-a2d5-7ec9cb6e50c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artemisa_inmobiliaria/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/artemisa_inmobiliaria/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logofinal.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logofinal.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logofinal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/logofinal.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/logofinal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/icono.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/logofinal.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/logofinal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/p1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda_virtual/templates/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda_virtual/templates/account/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tienda_virtual/templates/tienda_virtual/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda_virtual/templates/tienda_virtual/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda_virtual/templates/tienda_virtual/inmuebles.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda_virtual/templates/tienda_virtual/inmuebles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda_virtual/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tienda_virtual/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda_virtual/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tienda_virtual/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +56,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Pagina web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../booksapp" />
   </component>
   <component name="RunManager">
     <configuration name="artemisa_inmobiliaria" type="Python.DjangoServer" factoryName="Django server">
@@ -87,7 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606513314408</updated>
       <workItem from="1606513315505" duration="18034000" />
-      <workItem from="1606534160946" duration="3730000" />
+      <workItem from="1606534160946" duration="21211000" />
     </task>
     <servers />
   </component>
@@ -111,9 +116,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="446" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1606520095881" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1606535535141">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1606546326104">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606535535141" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606546326104" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606538542004">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606538542004" />
   </component>
 </project>

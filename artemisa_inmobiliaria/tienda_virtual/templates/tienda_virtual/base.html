@@ -5,74 +5,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artemisa Inmobiliaria</title>
-    <link rel="shortcut icon" href="{% static  'media/logofinal.png'%}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static  'css/style.css'%}">
+    <link rel="shortcut icon" href="{% static 'media/logofinal.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <a href="#">Inicio</a>
-            <a href="#Productos">Productos</a>
-            <a href="#">¿Quiénes somos?</a>
-            <a href="#">Contacto</a>
-            <a href="{% url 'login' %}">Iniciar sesión</a>
+            <a href="">Inicio |</a>
+            <a href="#sobre-nosotros">Sobre Nosotros |</a>
+            <a href="#productos">Productos |</a>
+            <a href="#servicios">Servicios |</a>
+            <a href="{% url 'login' %}">Iniciar Sesión</a>
         </nav>
         <section class="textos-header">
-            <h1>Artemisa Inmobiliaria</h1>
-            <h2>Con una pagina web potente</h2>
+            <h1>ARTEMISA INMOBILIARIA</h1>
+            <h2>Cazando bienes raíces</h2>
         </section>
         <div class = "wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
     </header>
-        <main>
-        <section class = "contenedor sobre-nosotros">
-            <h2 class="titulo">Nuestro producto</h2>
-            <div id="Sobre nosotros">
-                <img src="{%static 'media/logofinal.png'%}" alt="" class="imagen-about-us">
+    <main>
+        <section id = "sobre-nosotros" class = "contenedor sobre-nosotros">
+            <h2 class="titulo">Sobre Nosotros</h2>
+            <div class="contenedor-sobre-nosotros">
+                <img src="{% static 'media/logofinal.png' %}" alt="" class="imagen-about-us">
                 <div class="contenedor-textos">
-                    <h3><span>1</span>Los mejores productos</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse magnam perferendis ducimus voluptatem explicabo nulla assumenda fugit, et possimus eveniet libero dolores repellat quae provident! Minima natus similique voluptatem numquam.</p>
-                    <h3><span>2</span>Los mejores productos</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse magnam perferendis ducimus voluptatem explicabo nulla assumenda fugit, et possimus eveniet libero dolores repellat quae provident! Minima natus similique voluptatem numquam.</p>
+                    <h3><span>1</span></h3>
+                    <p>Artemisa Inmobiliaria es una empresa diseñada para cumplir los sueños de las personas. Todos hemos soñado con una casa hermosa donde podamos pasar el resto de nuestras vidas o un lugar tranquilo y cómodo para trabajar. Por esto, nuestro principal objetivo es mostrar los inmuebles con el fin de que nuestros clientes al fin puedan encontrar ese lugar tan anhelado. Siendo así, queremos priorizar la felicidad de nuestros clientes, para esto tenemos una gran variedad de bienes a la venta.</p>
+                    <h3><span>2</span></h3>
+                    <p>Lo más increíble de nuestra empresa es que no trabajamos por medio de otras personas, las propiedades a la venta nos pertenecen y están completamente libres para su compra.</p>
                 </div>
             </div>
         </section>
-        <section class="portafolio">
+        <section id = "productos" class="portafolio">
             <div class="contenedor">
-                <h2 class="titulo">Portafolio</h2>
+                <h2 class="titulo">Productos</h2>
                 <div class="galeria-port">
                     <div class="imagen-port">
-                        <img src= alt="">
+                        <img src="{% static 'media/apartaestudio.jpg' %}" alt="">
                         <div class="hover-galeria">
-                            <img src="img/icono.jpeg" alt="">
-                            <p>Nuestro trabajo</p>
+                            <a href="{% url 'apartaestudio' %}"><img src="{% static 'media/icon.jpeg' %}" alt=""></a>
+                            <p>Apartaestudio</p>
                         </div>
                     </div>
                     <div class="imagen-port">
-                        <img src="img/3.jpeg" alt="">
+                        <img src="{% static 'media/Apartamentos.jpg' %}" alt="">
                         <div class="hover-galeria">
-                            <img src="img/icono.jpeg" alt="">
-                            <p>Nuestro trabajo</p>
+                            <a href="{% url 'apartamentos' %}"><img src="{% static 'media/icon.jpeg' %}" alt=""></a>
+                            <p>Apartamento</p>
                         </div>
                     </div>
                     <div class="imagen-port">
-                        <img src="img/4.jpeg" alt="">
+                        <img src="{% static 'media/Casa.jpg' %}"  alt="">
                         <div class="hover-galeria">
-                            <img src="img/icono.jpeg" alt="">
-                            <p>Nuestro trabajo</p>
+                            <a href="{% url 'casas' %}"><img src="{% static 'media/icon.jpeg' %}" alt=""></a>
+                            <p>Casa</p>
                         </div>
                     </div>
                     <div class="imagen-port">
-                        <img src="img/5.jpeg" alt="">
+                        <img src="{% static 'media/oficina.jpg' %}" alt="">
                         <div class="hover-galeria">
-                            <img src="img/icono.jpeg" alt="">
-                            <p>Nuestro trabajo</p>
+                            <a href="{% url 'oficinas' %}"><img src="{% static 'media/icon.jpeg' %}" alt=""></a>
+                            <p>Oficina</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="{% static 'media/lote.jpg' %}" alt="">
+                        <div class="hover-galeria">
+                            <a href="{% url 'lotes' %}"><img src="{% static 'media/icon.jpeg' %}" alt=""></a>
+                            <p>Lote</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="{% static 'media/Condominio.jpg' %}" alt="">
+                        <div class="hover-galeria">
+                            <a href="{% url 'condominios' %}"><img src="{% static 'media/icon.jpeg' %}" alt=""></a>
+                            <p>Condominio</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <section id= "servicios" class="about-service">
+            <div class="contenedor">
+                <h2 class="titulo">Nuestros Servicios</h2>
+                <div class="servicio-cont">
+                    <div class="servicio-int">
+                        <img src="{% static 'media/atencion-al-cliente-bn.png' %}" alt="">
+                        <h3>Servicio al Cliente</h3>
+                        <p>Contamos con un servicio de atención personalizado para asegurar la mayor satisfacción.</p>
+                    </div>
+                    <div class="servicio-int">
+                        <a href="{% url 'domiciliarios' %}"><img src="{% static 'media/entrega-de-bienes-a-domicilio.png' %}" alt=""></a>
+                        <h3>Entrega a Domicilio</h3>
+                        <p>Una vez realizado el pago se entregan a domicilio las llaves del inmueble y se lleva el contrato para ser firmado.</p>
+                    </div>
+                    <div class="servicio-int">
+                        <img src="{% static 'media/garantia.png' %}" alt="">
+                        <h3>Garantía</h3>
+                        <p>Confiamos en la calidad de nuestros inmuebles, te ofrecemos una garantía de un año a partir de la fecha en la que se firmó el contrato.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
+        <section class="contenedor-clientes">
+            <h2 class="titulo">Clientes Satisfechos</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="img/p1.jpeg" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Name</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, aut?</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/p2.jpg" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Name</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, aut?</p>
+                    </div>
+                </div>
+            </div>
+        </section>-->
     </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foot">
+                <h4>Teléfono</h4>
+                <p>(1) 3716808</p>
+            </div>
+            <div class="content-foot">
+                <h4>Correo Electrónico</h4>
+                <p>Artemisa.Inmobiliaria@artemisa.com</p>
+            </div>
+            <div class="content-foot">
+                <h4>Ubicación</h4>
+                <p>Bogotá D.C</p>
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy; ARTEMISA | INMOBILIARIA </h2>
+    </footer>
 </body>
 </html>

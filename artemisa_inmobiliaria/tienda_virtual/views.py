@@ -19,9 +19,27 @@ def inmuebles(request):
 def presentacion(request):
     return render(request, 'tienda_virtual/presentacion.html',)
 
+def apartaestudio(request):
+    return render(request, 'tienda_virtual/apartaestudio.html',)
 
-def contacto(request):
-    return render(request, 'tienda_virtual/contacto.html',)
+
+def apartamento(request):
+    return render(request, 'tienda_virtual/apartamentos.html',)
+
+def casa(request):
+    return render(request, 'tienda_virtual/casas.html',)
+
+def oficina(request):
+    return render(request, 'tienda_virtual/oficinas.html',)
+
+def lote(request):
+    return render(request, 'tienda_virtual/lotes.html',)
+
+def condominio(request):
+    return render(request, 'tienda_virtual/condominios.html',)
+
+def domiciliarios(request):
+    return render(request, 'tienda_virtual/domiciliarios.html',)
 
 def user_login(request):
     if request.method == 'POST':

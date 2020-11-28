@@ -5,7 +5,7 @@
 }
 
 body{
-    font-family: 'open sans';
+    font-family: 'extra-bold 800', serif;
 }
 
 .contenedor{
@@ -19,6 +19,7 @@ body{
 .titulo{
     color: #8d479e;
     font-size: 30px;
+    font-weight: bolder;
     text-align: center;
     margin-bottom: 60px;
 }
@@ -28,9 +29,8 @@ body{
 header{
     width: 100%;
     height: 600px;
-    background: #00416A;  /* fallback for old browsers */
-    background: linear-gradient(to right, #E4E5E6, #00416a8e), url(../img/portada.jpg);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #E4E5E6, #00416a8e), url(../img/portada.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #0F2027;  /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c5364c9, #203a4360, #0f2027b7), url(../media/portada.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: cover;
     background-attachment: fixed;
     position: relative;
@@ -88,11 +88,11 @@ header .textos-header{
 }
 
 .imagen-about-us{
-    width: 48%;
+    width: 42%;
 }
 
 .sobre-nosotros .contenedor-textos{
-    width: 40%;
+    width: 48%;
 }
 
 .contenedor-textos h3{
@@ -114,7 +114,8 @@ header .textos-header{
 
 .contenedor-textos p{
     padding: 0px 0px 30px 15px;
-    font-weight: 300;
+    font-weight: 200;
+    font-size: 20px;
     text-align: justify;
 }
 
@@ -131,7 +132,7 @@ header .textos-header{
 }
 
 .imagen-port{
-    width: 24%;
+    width: 32%;
     margin-bottom: 10px;
     height: 200px;
     overflow: hidden;
@@ -171,4 +172,200 @@ header .textos-header{
 
 .imagen-port:hover .hover-galeria{
     transform: scale(1);
+}
+
+/*Clientes*/
+
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 50px;
+}
+
+.cards .card{
+    background: #4d0686;
+    display: flex;
+    width: 40%;
+    height: 200px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.cards .card img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: block;
+}
+
+.cards .card > .contenido-texto-card{
+    width: 60%;
+    color: #fff;
+}
+
+.cards .card > .contenido-texto-card p{
+    font-weight: 300;
+    padding-top: 5px;
+}
+
+/*our team*/
+
+.about-service{
+    background: #fff;
+    padding-bottom: 30px;
+}
+
+.servicio-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.servicio-int{
+    width: 24%;
+    text-align: center;
+}
+
+.servicio-int img{
+    width: 90%;
+}
+
+.servicio-int h3{
+    margin: 10px 0;
+}
+
+.servicio-int p{
+    font-weight: 300;
+    text-align: justify;
+}
+
+footer{
+    background: #414141;
+    padding: 60px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.contenedor-footer{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content-foot{
+    text-align: center;
+}
+
+.content-foot h4{
+    color: #fff;
+    border-bottom: 3px solid #af20d3;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.content-foot p{
+    color: #ccc;
+}
+
+.titulo-final{
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #9e9797;
+}
+
+.container2{
+  margin: auto;
+  background-color: white;
+  width: 800px;
+  padding: 30px;
+}
+
+
+.menu{
+  text-align: center;
+  margin: 20px;
+}
+
+.menu li{
+  display: inline-block;
+  text-align: center;
+}
+
+.menu li a{
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background-color: grey;
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  border-radius: 100%;
+}
+
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul.slider{
+  position: relative;
+  width: 800px;
+  height: 300px;
+}
+
+ul.slider li {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    transition: opacity .5s;
+    background:#fff;
+}
+
+ul.slider li img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+ul.slider li:first-child {
+    opacity: 1; /*Mostramos el primer <li>*/
+}
+
+ul.slider li:target {
+    opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+}
+
+.menu{
+  text-align: center;
+  margin: 20px;
+}
+
+.menu li{
+  display: inline-block;
+  text-align: center;
+}
+
+.menu li a{
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background-color: grey;
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  border-radius: 100%;
 }
