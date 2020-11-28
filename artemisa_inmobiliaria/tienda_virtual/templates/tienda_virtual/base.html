@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Artemisa Inmobiliaria</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/product/">
+    <style>
+        .bd-placeholder-img {
+            font-size: 2rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 1000px) {
+            .bd-placeholder-img-lg {
+                font-size: 5rem;
+            }
+            .navbar{
+                height: 100px;
+                font-size: 3rem;
+                font-family: "courier-new", monospace;
+                padding: 40px 0 0 0;
+            }
+        }
+
+    </style>
+
+</head>
+<body style="background-color: lavender">
+    <div>
+        <nav class="navbar navbar-light" style="background-color: #b676ef">
+            <a href ="{% url 'index' %}"  style="text-decoration:none">Inicio</a>
+            <a href="{% url 'inmuebles' %}" style="text-decoration:none">Productos</a>
+            <a href="{% url 'presentacion' %}" style="text-decoration:none">¿Quiénes somos?</a>
+            <a href="{% url 'contacto' %}" style="text-decoration:none">Contacto</a>
+            <a href="{% url 'login' %}" style="text-decoration:none">Ingreso</a>
+        </nav>
+    </div>
+    <div class="img1">
+      <img src= "https://raw.githubusercontent.com/andreti03/Decasports/master/static/IMG/bolas-de-ping-pong-ttb-900c-40-3-x4-blancas.jpg" width=  "100%" height="100%"/>
+    </div>
+</body>
+</html>
