@@ -1,10 +1,10 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from .models import Inmuebles
+from .models import Inmuebles, Categorias
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm
 from django.http import HttpResponse
-
+import os
 
 # Create your views here.
 def index(request):
@@ -19,27 +19,128 @@ def inmuebles(request):
 def presentacion(request):
     return render(request, 'tienda_virtual/presentacion.html',)
 
+
 def apartaestudio(request):
-    return render(request, 'tienda_virtual/apartaestudio.html',)
+    inmueble = Inmuebles.objects.filter(id_categoria=1)
+    ids = Inmuebles.objects.values_list('id_inmueble').filter(id_categoria=1)
+    id = [int(q[0]) for q in ids]
+    lista = os.listdir("static/media/Imagenes/")
+    listatot = []
+    for i in range(len(lista)):
+        if int(lista[i]) in id:
+            lista2 = os.listdir("static/media/Imagenes/"+lista[i] + "/")
+            aux = []
+            for q in range(len(lista2)):
+                aux.append('media/Imagenes/' + lista[i] + '/' + lista2[q])
+            listatot.append(aux)
+
+    apartaestudios = {'apartaestudios':inmueble,
+                      'lista':listatot}
+    return render(request, 'tienda_virtual/apartaestudio.html', apartaestudios)
 
 
 def apartamento(request):
-    return render(request, 'tienda_virtual/apartamentos.html',)
+    inmueble = Inmuebles.objects.filter(id_categoria=2)
+    ids = Inmuebles.objects.values_list('id_inmueble').filter(id_categoria=2)
+    id = [int(q[0]) for q in ids]
+    lista = os.listdir("static/media/Imagenes/")
+    listatot = []
+    for i in range(len(lista)):
+        if int(lista[i]) in id:
+            lista2 = os.listdir("static/media/Imagenes/" + lista[i] + "/")
+            aux = []
+            for q in range(len(lista2)):
+                aux.append('media/Imagenes/' + lista[i] + '/' + lista2[q])
+            listatot.append(aux)
+
+    apartamentos = {'apartamentos': inmueble,
+                      'lista': listatot}
+    return render(request, 'tienda_virtual/apartamentos.html', apartamentos)
+
 
 def casa(request):
-    return render(request, 'tienda_virtual/casas.html',)
+    inmueble = Inmuebles.objects.filter(id_categoria=3)
+    ids = Inmuebles.objects.values_list('id_inmueble').filter(id_categoria=3)
+    id = [int(q[0]) for q in ids]
+    lista = os.listdir("static/media/Imagenes/")
+    listatot = []
+    for i in range(len(lista)):
+        if int(lista[i]) in id:
+            lista2 = os.listdir("static/media/Imagenes/" + lista[i] + "/")
+            aux = []
+            for q in range(len(lista2)):
+                aux.append('media/Imagenes/' + lista[i] + '/' + lista2[q])
+            listatot.append(aux)
+
+    casas = {'casas': inmueble,
+            'lista': listatot}
+    return render(request, 'tienda_virtual/casas.html',casas)
+
 
 def oficina(request):
-    return render(request, 'tienda_virtual/oficinas.html',)
+    inmueble = Inmuebles.objects.filter(id_categoria=4)
+    ids = Inmuebles.objects.values_list('id_inmueble').filter(id_categoria=4)
+    id = [int(q[0]) for q in ids]
+    lista = os.listdir("static/media/Imagenes/")
+    listatot = []
+    for i in range(len(lista)):
+        if int(lista[i]) in id:
+            lista2 = os.listdir("static/media/Imagenes/" + lista[i] + "/")
+            aux = []
+            for q in range(len(lista2)):
+                aux.append('media/Imagenes/' + lista[i] + '/' + lista2[q])
+            listatot.append(aux)
+
+    oficinas = {'oficinas': inmueble,
+                'lista': listatot}
+    return render(request, 'tienda_virtual/oficinas.html',oficinas)
+
 
 def lote(request):
-    return render(request, 'tienda_virtual/lotes.html',)
+    inmueble = Inmuebles.objects.filter(id_categoria=5)
+    ids = Inmuebles.objects.values_list('id_inmueble').filter(id_categoria=5)
+    id = [int(q[0]) for q in ids]
+    lista = os.listdir("static/media/Imagenes/")
+    listatot = []
+    for i in range(len(lista)):
+        if int(lista[i]) in id:
+            lista2 = os.listdir("static/media/Imagenes/" + lista[i] + "/")
+            aux = []
+            for q in range(len(lista2)):
+                aux.append('media/Imagenes/' + lista[i] + '/' + lista2[q])
+            listatot.append(aux)
+
+    lotes = {'lotes': inmueble,
+                'lista': listatot}
+    return render(request, 'tienda_virtual/lotes.html',lotes)
+
 
 def condominio(request):
-    return render(request, 'tienda_virtual/condominios.html',)
+    inmueble = Inmuebles.objects.filter(id_categoria=6)
+    ids = Inmuebles.objects.values_list('id_inmueble').filter(id_categoria=6)
+    id = [int(q[0]) for q in ids]
+    lista = os.listdir("static/media/Imagenes/")
+    listatot = []
+    for i in range(len(lista)):
+        if int(lista[i]) in id:
+            lista2 = os.listdir("static/media/Imagenes/" + lista[i] + "/")
+            aux = []
+            for q in range(len(lista2)):
+                aux.append('media/Imagenes/' + lista[i] + '/' + lista2[q])
+            listatot.append(aux)
+
+    condominios = {'condominios': inmueble,
+             'lista': listatot}
+    return render(request, 'tienda_virtual/condominios.html',condominios)
+
 
 def domiciliarios(request):
     return render(request, 'tienda_virtual/domiciliarios.html',)
+
+
+def carrito(request):
+    return render(request, 'tienda_virtual/carrito-de-compras.html',)
+
 
 def user_login(request):
     if request.method == 'POST':
