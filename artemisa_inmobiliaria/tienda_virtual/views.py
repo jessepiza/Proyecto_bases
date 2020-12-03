@@ -4,6 +4,9 @@ from .models import Inmuebles, Categorias
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm
 from django.http import HttpResponse
+from PIL import Image
+from PIL import ImageFont
+from PIL import ImageDraw
 import os
 
 # Create your views here.
@@ -26,6 +29,20 @@ def apartaestudio(request):
     id = [int(q[0]) for q in ids]
     lista = os.listdir("static/media/Imagenes/")
     listatot = []
+    for i in id:
+        img = Image.new('RGB', (800, 400), "white")
+        draw = ImageDraw.Draw(img)
+        font = ImageFont.truetype("C:/Windows/Fonts/bellb.ttf", 30)
+        purple = (126, 60, 142)
+        for q in inmueble:
+            if i == q.id_inmueble:
+                draw.text((150, 100), 'Dirección: ' + '\n' +'Estrato: ' + '\n' + 'Sector: ' '\n' +'Precio: '+ '\n' +'Area: '
+                                     + '\n' + 'Antigüedad: ' + '\n' + 'No. Habitaciones: ' '\n' + 'No. Baños: ', purple, font=font)
+                draw.text((450, 100), q.direccion_inmueble + '\n' + str(q.estrato) + '\n' + q.sector + '\n' + '$' + str(q.precio)
+                          + '\n' + str(round(q.area, 2)) + ' m²' + '\n' + str(q.antiguedad) + ' años' + '\n' + str(q.numero_habitaciones)
+                          + '\n' + str(q.numero_baños), (0, 0, 0), font=font)
+        img.save('static/media/Imagenes/' + str(i) + '/z.jpg', 'JPEG')
+
     for i in range(len(lista)):
         if int(lista[i]) in id:
             lista2 = os.listdir("static/media/Imagenes/"+lista[i] + "/")
@@ -45,6 +62,19 @@ def apartamento(request):
     id = [int(q[0]) for q in ids]
     lista = os.listdir("static/media/Imagenes/")
     listatot = []
+    for i in id:
+        img = Image.new('RGB', (800, 400), "white")
+        draw = ImageDraw.Draw(img)
+        font = ImageFont.truetype("C:/Windows/Fonts/bellb.ttf", 30)
+        purple = (126, 60, 142)
+        for q in inmueble:
+            if i == q.id_inmueble:
+                draw.text((20, 100), 'Dirección: ' + '\n' +'Estrato: ' + '\n' + 'Sector: ' '\n' +'Precio: '+ '\n' +'Area: '
+                                     + '\n' + 'Antigüedad: ' + '\n' + 'No. Habitaciones: ' '\n' + 'No. Baños: ', purple, font=font)
+                draw.text((300, 100), q.direccion_inmueble + '\n' + str(q.estrato) + '\n' + q.sector + '\n' + '$' + str(q.precio)
+                          + '\n' + str(round(q.area, 2)) + ' m²' + '\n' + str(q.antiguedad) + ' años' + '\n' + str(q.numero_habitaciones)
+                          + '\n' + str(q.numero_baños), (0, 0, 0), font=font)
+        img.save('static/media/Imagenes/' + str(i) + '/z.jpg', 'JPEG')
     for i in range(len(lista)):
         if int(lista[i]) in id:
             lista2 = os.listdir("static/media/Imagenes/" + lista[i] + "/")
@@ -64,6 +94,19 @@ def casa(request):
     id = [int(q[0]) for q in ids]
     lista = os.listdir("static/media/Imagenes/")
     listatot = []
+    for i in id:
+        img = Image.new('RGB', (800, 400), "white")
+        draw = ImageDraw.Draw(img)
+        font = ImageFont.truetype("C:/Windows/Fonts/bellb.ttf", 30)
+        purple = (126, 60, 142)
+        for q in inmueble:
+            if i == q.id_inmueble:
+                draw.text((150, 100), 'Dirección: ' + '\n' +'Estrato: ' + '\n' + 'Sector: ' '\n' +'Precio: '+ '\n' +'Area: '
+                                     + '\n' + 'Antigüedad: ' + '\n' + 'No. Habitaciones: ' '\n' + 'No. Baños: ', purple, font=font)
+                draw.text((450, 100), q.direccion_inmueble + '\n' + str(q.estrato) + '\n' + q.sector + '\n' + '$' + str(q.precio)
+                          + '\n' + str(round(q.area, 2)) + ' m²' + '\n' + str(q.antiguedad) + ' años' + '\n' + str(q.numero_habitaciones)
+                          + '\n' + str(q.numero_baños), (0, 0, 0), font=font)
+        img.save('static/media/Imagenes/' + str(i) + '/z.jpg', 'JPEG')
     for i in range(len(lista)):
         if int(lista[i]) in id:
             lista2 = os.listdir("static/media/Imagenes/" + lista[i] + "/")
@@ -83,6 +126,19 @@ def oficina(request):
     id = [int(q[0]) for q in ids]
     lista = os.listdir("static/media/Imagenes/")
     listatot = []
+    for i in id:
+        img = Image.new('RGB', (800, 400), "white")
+        draw = ImageDraw.Draw(img)
+        font = ImageFont.truetype("C:/Windows/Fonts/bellb.ttf", 30)
+        purple = (126, 60, 142)
+        for q in inmueble:
+            if i == q.id_inmueble:
+                draw.text((150, 100), 'Dirección: ' + '\n' +'Estrato: ' + '\n' + 'Sector: ' '\n' +'Precio: '+ '\n' +'Area: '
+                                     + '\n' + 'Antigüedad: ' + '\n' + 'No. Habitaciones: ' '\n' + 'No. Baños: ', purple, font=font)
+                draw.text((450, 100), q.direccion_inmueble + '\n' + str(q.estrato) + '\n' + q.sector + '\n' + '$' + str(q.precio)
+                          + '\n' + str(round(q.area, 2)) + ' m²' + '\n' + str(q.antiguedad) + ' años' + '\n' + str(q.numero_habitaciones)
+                          + '\n' + str(q.numero_baños), (0, 0, 0), font=font)
+        img.save('static/media/Imagenes/' + str(i) + '/z.jpg', 'JPEG')
     for i in range(len(lista)):
         if int(lista[i]) in id:
             lista2 = os.listdir("static/media/Imagenes/" + lista[i] + "/")
@@ -102,6 +158,19 @@ def lote(request):
     id = [int(q[0]) for q in ids]
     lista = os.listdir("static/media/Imagenes/")
     listatot = []
+    for i in id:
+        img = Image.new('RGB', (800, 400), "white")
+        draw = ImageDraw.Draw(img)
+        font = ImageFont.truetype("C:/Windows/Fonts/bellb.ttf", 30)
+        purple = (126, 60, 142)
+        for q in inmueble:
+            if i == q.id_inmueble:
+                draw.text((150, 100), 'Dirección: ' + '\n' +'Estrato: ' + '\n' + 'Sector: ' '\n' +'Precio: '+ '\n' +'Area: '
+                                     + '\n' + 'Antigüedad: ' + '\n' + 'No. Habitaciones: ' '\n' + 'No. Baños: ', purple, font=font)
+                draw.text((450, 100), q.direccion_inmueble + '\n' + str(q.estrato) + '\n' + q.sector + '\n' + '$' + str(q.precio)
+                          + '\n' + str(round(q.area, 2)) + ' m²' + '\n' + str(q.antiguedad) + ' años' + '\n' + str(q.numero_habitaciones)
+                          + '\n' + str(q.numero_baños), (0, 0, 0), font=font)
+        img.save('static/media/Imagenes/' + str(i) + '/z.jpg', 'JPEG')
     for i in range(len(lista)):
         if int(lista[i]) in id:
             lista2 = os.listdir("static/media/Imagenes/" + lista[i] + "/")
@@ -121,6 +190,19 @@ def condominio(request):
     id = [int(q[0]) for q in ids]
     lista = os.listdir("static/media/Imagenes/")
     listatot = []
+    for i in id:
+        img = Image.new('RGB', (800, 400), "white")
+        draw = ImageDraw.Draw(img)
+        font = ImageFont.truetype("C:/Windows/Fonts/bellb.ttf", 30)
+        purple = (126, 60, 142)
+        for q in inmueble:
+            if i == q.id_inmueble:
+                draw.text((150, 100), 'Dirección: ' + '\n' +'Estrato: ' + '\n' + 'Sector: ' '\n' +'Precio: '+ '\n' +'Area: '
+                                     + '\n' + 'Antigüedad: ' + '\n' + 'No. Habitaciones: ' '\n' + 'No. Baños: ', purple, font=font)
+                draw.text((450, 100), q.direccion_inmueble + '\n' + str(q.estrato) + '\n' + q.sector + '\n' + '$' + str(q.precio)
+                          + '\n' + str(round(q.area, 2)) + ' m²' + '\n' + str(q.antiguedad) + ' años' + '\n' + str(q.numero_habitaciones)
+                          + '\n' + str(q.numero_baños), (0, 0, 0), font=font)
+        img.save('static/media/Imagenes/' + str(i) + '/z.jpg', 'JPEG')
     for i in range(len(lista)):
         if int(lista[i]) in id:
             lista2 = os.listdir("static/media/Imagenes/" + lista[i] + "/")

@@ -28,7 +28,7 @@
             <section class = "contenedor-1">
                 <ul class="slider">
                     {% for imagen in apartaestudio %}
-                        <li id={% static imagen%}><img src= "{% static imagen%}" ></li>
+                        <li id={% static imagen%}><img src= "{% static imagen%}"  alt=""></li>
                     {% endfor %}
                 </ul>
                 <nav2>
@@ -37,7 +37,6 @@
                                 <li><a href=#{% static imagen%}><h3><span></span></h3></a></li>
                         {% endfor %}
                     </ul>
-
                 </nav2>
             </section>
         {% endfor %}
