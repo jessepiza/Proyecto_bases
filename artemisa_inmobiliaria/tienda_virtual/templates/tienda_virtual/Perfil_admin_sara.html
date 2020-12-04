@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artemisa Inmobiliaria</title>
     <link rel="shortcut icon" href="{% static 'media/logofinal.png' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styleperfil.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
@@ -22,27 +22,27 @@
             <a href="#">Mi perfil |</a>
         </nav>
         <section class="textos-header">
-            <h1>CARRITO DE COMPRAS</h1>
+            <h1>ADMINISTRADOR</h1>
         </section>
         <div class = "wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
     </header>
     <main>
-        <center>
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                <table class="w-50 table table-light">
-                    {% for field in upload_form %}
-                        <tr>
-                            <th>{{ field.label }}</th>
-                            <td>{{ field }}</td>
-                        </tr>
-                    {% endfor %}
-                </table>
-                <button type="submit" class="btn btn-lg btn-primary">
-                    Guardar
-                </button>
-            </form>
-        </center>
+        <section class="contenedor-clientes">
+            <h2 class="titulo">MI PERFIL</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="{% static 'media/sara.jpeg' %}" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Sara Zuleta</h4>
+                        <h5><span>1</span> Número de identificación: 1006773982</h5>
+                        <h5><span>2</span> Correo electronico: sara.zuleta@artemisa.com</h5>
+                        <h5><span>3</span> Fecha de nacimiento: 30/11/2002</h5>
+                        <h5><span>3</span> Género: Femenino</h5>
+
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="contenedor-footer">

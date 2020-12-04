@@ -6,6 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+from datetime import date
 
 
 class CargosEmpleado(models.Model):
@@ -20,11 +21,12 @@ class CargosEmpleado(models.Model):
 
 class CarritosCompra(models.Model):
     id_carrito = models.SmallAutoField(db_column='Id_carrito', primary_key=True)  # Field name made lowercase.
-    num_item = models.SmallIntegerField(db_column='Num_item')  # Field name made lowercase.
-    fecha_ingreso = models.DateField(db_column='Fecha_ingreso', blank=True, null=True)  # Field name made lowercase.
-    fecha_caducidad = models.DateField(db_column='Fecha_caducidad')  # Field name made lowercase.
-    cedula_ciudadania = models.OneToOneField('Clientes', models.DO_NOTHING, db_column='Cedula_ciudadania', blank=True, null=True)  # Field name made lowercase.
-    checkout = models.BooleanField(blank=True, null=True)
+    id_inmueble = models.ForeignKey('Inmuebles', models.DO_NOTHING,db_column='Id_inmueble')  # Field name made lowercase.
+    num_item = models.SmallIntegerField(db_column='Num_item', default=1)  # Field name made lowercase.
+    fecha_ingreso = models.DateField(db_column='Fecha_ingreso', default=date.today)  # Field name made lowercase.
+    fecha_caducidad = models.DateField(db_column='Fecha_caducidad', default=date.today)  # Field name made lowercase.
+    cedula_ciudadania = models.BigIntegerField(db_column='Cedula_ciudadania')    # Field name made lowercase.
+    pago_inicial = models.BigIntegerField(db_column='Pago_inicial')  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -41,7 +43,7 @@ class Categorias(models.Model):
 
 
 class Clientes(models.Model):
-    cedula_ciudadania = models.BigIntegerField(db_column='Cedula_ciudadania', primary_key=True)  # Field name made lowercase.
+    cedula_ciudadania = models.OneToOneField('CarritosCompra',models.DO_NOTHING,db_column='Cedula_ciudadania', primary_key=True, unique=True)  # Field name made lowercase.
     nombre = models.CharField(db_column='Nombre', max_length=50)  # Field name made lowercase.
     apellido = models.CharField(db_column='Apellido', max_length=50)  # Field name made lowercase.
     direccion = models.CharField(db_column='Direccion', max_length=50)  # Field name made lowercase.
@@ -96,22 +98,12 @@ class Inmuebles(models.Model):
 
 class Ventas(models.Model):
     num_venta = models.SmallAutoField(db_column='Num_venta', primary_key=True)  # Field name made lowercase.
-    pago_inicial = models.BigIntegerField(db_column='Pago_inicial')  # Field name made lowercase.
+    pago_inicial = models.ForeignKey(CarritosCompra,models.DO_NOTHING, db_column='Pago_inicial', related_name='+')  # Field name made lowercase.
     pago_final = models.BigIntegerField(db_column='Pago_final')  # Field name made lowercase.
-    fecha = models.DateField(db_column='Fecha')  # Field name made lowercase.
-    id_carrito = models.OneToOneField(CarritosCompra, models.DO_NOTHING, db_column='Id_carrito', blank=True, null=True)  # Field name made lowercase.
+    fecha = models.DateField(db_column='Fecha', default=date.today)  # Field name made lowercase.
+    id_carrito = models.ForeignKey(CarritosCompra, models.DO_NOTHING, db_column='Id_carrito')  # Field name made lowercase.
     id_empleado = models.ForeignKey(Empleados, models.DO_NOTHING, db_column='Id_empleado', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
         db_table = 'Ventas'
-
-
-class ManyInmuebleHasManyCarritoCompra(models.Model):
-    id_inmueble_inmueble = models.OneToOneField(Inmuebles, models.DO_NOTHING, db_column='Id_inmueble_Inmueble', primary_key=True)  # Field name made lowercase.
-    id_carrito_carrito_compra = models.ForeignKey(CarritosCompra, models.DO_NOTHING, db_column='Id_carrito_Carrito_compra')  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'many_Inmueble_has_many_Carrito_compra'
-        unique_together = (('id_inmueble_inmueble', 'id_carrito_carrito_compra'),)

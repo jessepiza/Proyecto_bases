@@ -18,7 +18,20 @@ urlpatterns = [
     #path('login/', views.user_login, name='login'),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('signup/', views.signup, name = 'signup'),
     path('', views.dashboard, name="dashboard"),
+
+    path('upload_inmueble/', views.upload_inmueble, name='upload_inmueble'),
+    path('upload_domiciliario/', views.upload_domiciliarios, name='upload_domiciliario'),
+    path('editar_inmueble/update/<int:id_inmueble>', views.update_inmueble),
+    path('editar_domiciliario/update/<int:id_empleado>', views.update_domiciliarios),
+    path('editar_inmueble/delete/<int:id_inmueble>', views.delete_inmueble),
+    path('editar_domiciliario/delete/<int:id_empleado>', views.delete_domiciliarios),
+
+    path('perfil/', views.perfil, name = 'perfil'),
+    path('editar_inmueble/', views.editar_inmueble, name ='editar_inmueble'),
+    path('editar_domiciliario/', views.editar_domiciliario, name ='editar_domiliciario'),
+    path('ventas/', views.ventas, name = 'ventas'),
 
     # rutas de cambio de contraseña
     # rutas de cambio de contraseña

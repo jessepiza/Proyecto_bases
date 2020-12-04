@@ -1,19 +1,59 @@
-{% block title %}Log-in{% endblock %}
-{% block content %}
-    <h1>Log-in</h1>
-    {% if form.errors %}
-        <p>
-            Su usuario y contraseña no coinciden. Por favor intente de nuevo
-        </p>
-    {% else %}
-        <p>Po favor use el siguiente formulario para iniciar sesión</p>
-    {%  endif %}
-    <div class="login-form">
-        <form action="{% url 'login' %}" method="post">
-            {{ form.as_p }}
-            {% csrf_token %}
-            <input type="hidden" name="next" value="{{ next }}" />
-            <p><input type="submit" value="Iniciar sesión"></p>
-        </form>
-    </div>
-{% endblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Ingresar</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrarse</label>
+		<div class="login-form">
+			<form class = "sign-in-htm" method="post"
+                action="{% url 'login' %}">
+                {% csrf_token %}
+				<div class="group">
+					<label for="user" class="label">Usuario</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Contraseña</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<input id="check" type="checkbox" class="check" checked>
+					<label for="check"><span class="icon"></span> Mantener sesión iniciada</label>
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Ingresar">
+                    <input type="hidden" name="next" value="{{ next }}" />
+				</div>
+				<div class="hr"></div>
+			</form>
+			<form class="sign-up-htm" method="post"
+                action="{% url 'signup' %}">
+                {% csrf_token %}
+                    {% csrf_token %}
+				<div class="group">
+					<label for="user" class="label">Usuario</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Contraseña</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Repetir contraseña</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Correo electrónico</label>
+					<input id="pass" type="text" class="input">
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Registrarse">
+                    <input type="hidden" name="next" value="{{ next }}" />
+				</div>
+				<div class="hr"></div>
+			</form>
+		</div>
+	</div>
+</div>

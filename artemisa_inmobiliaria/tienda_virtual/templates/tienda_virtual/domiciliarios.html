@@ -6,40 +6,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artemisa Inmobiliaria</title>
     <link rel="shortcut icon" href="{% static 'media/logofinal.png' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styleperfil.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container2">
-
-      <ul class="slider">
-        <li id="slide1">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3947459/car.jpg"/>
-        </li>
-        <li id="slide2">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3947459/sunset.jpg"/>
-        </li>
-        <li id="slide3">
-          <h1>Ejemplo con otros elementos</h1>
-          <p>Esto es un párrafo de ejemplo para comprobar que podemos meter cualquier tipo de elementos en el slider</p>
-          <a href="https://kikopalomares.com/">¡Corre a mi web para más contenido!</a>
-        </li>
-      </ul>
-
-      <ul class="menu">
-        <li>
-          <a href="#slide1"></a>
-        </li>
-        <li>
-          <a href="#slide2"></a>
-        </li>
-         <li>
-          <a href="#slide3"></a>
-        </li>
-      </ul>
-
-    </div>
+    <header>
+        <nav>
+            <a href="{% url 'index' %}">Inicio </a>
+        </nav>
+        <section class="textos-header">
+            <h1>DOMICILIARIOS</h1>
+        </section>
+        <div class = "wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+    </header>
+    <main>
+        <section class="contenedor-clientes">
+            <div class="cards">
+                <div class="card">
+                    <img src="{% static 'media/h1.jpeg' %}" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Juan Arango</h4>
+                        <h5><span>1</span> Número de identificación: 100256987</h5>
+                        <h5><span>2</span> Correo electronico: juan.arango@artemisa.com</h5>
+                        <h5><span>3</span> Fecha de nacimiento: 17/11/1999</h5>
+                        <h5><span>3</span> Género: Masculino</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contenedor-clientes">
+            <div class="cards">
+                <div class="card">
+                    <img src="{% static 'media/m1.jpeg' %}" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Karen Buitrago</h4>
+                        <h5><span>1</span> Número de identificación: 478963257</h5>
+                        <h5><span>2</span> Correo efvlectronico: karen.buitrago@artemisa.com</h5>
+                        <h5><span>3</span> Fecha de nacimiento: 07/05/1995</h5>
+                        <h5><span>3</span> Género: Femenino</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contenedor-clientes">
+            <div class="cards">
+                <div class="card">
+                    <img src="{% static 'media/h2.jpeg' %}" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Gustavo Herrera</h4>
+                        <h5><span>1</span> Número de identificación: 102245874</h5>
+                        <h5><span>2</span> Correo electronico: gustavo.herrera@artemisa.com</h5>
+                        <h5><span>3</span> Fecha de nacimiento: 11/01/2000</h5>
+                        <h5><span>3</span> Género: Masculino</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contenedor-clientes">
+            <div class="cards">
+                <div class="card">
+                    <img src="{% static 'media/h3.jpeg' %}" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Sebastian Medina</h4>
+                        <h5><span>1</span> Número de identificación: 456871235</h5>
+                        <h5><span>2</span> Correo electronico: sebastian.medina@artemisa.com</h5>
+                        <h5><span>3</span> Fecha de nacimiento: 15/07/2000</h5>
+                        <h5><span>3</span> Género: Masculino</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contenedor-clientes">
+            <div class="cards">
+                <div class="card">
+                    <img src="{% static 'media/m2.jpeg' %}" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Luisa Mejia</h4>
+                        <h5><span>1</span> Número de identificación: 147852145</h5>
+                        <h5><span>2</span> Correo electronico: luisa.mejia@artemisa.com</h5>
+                        <h5><span>3</span> Fecha de nacimiento: 09/02/2001</h5>
+                        <h5><span>3</span> Género: Femenino</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contenedor-clientes">
+            <div class="cards">
+                <div class="card">
+                    <img src="{% static 'media/m3.jpeg' %}" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Diana Romero</h4>
+                        <h5><span>1</span> Número de identificación: 100365478</h5>
+                        <h5><span>2</span> Correo electronico: diana.romero@artemisa.com</h5>
+                        <h5><span>3</span> Fecha de nacimiento: 07/04/2000</h5>
+                        <h5><span>3</span> Género: Femenino</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foot">
+                <h4>Teléfono</h4>
+                <p>(1) 3716808</p>
+            </div>
+            <div class="content-foot">
+                <h4>Correo Electrónico</h4>
+                <p>Artemisa.Inmobiliaria@artemisa.com</p>
+            </div>
+            <div class="content-foot">
+                <h4>Ubicación</h4>
+                <p>Bogotá D.C</p>
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy; ARTEMISA | INMOBILIARIA </h2>
+    </footer>
 </body>
 </html>

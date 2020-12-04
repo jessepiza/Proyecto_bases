@@ -10,9 +10,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+    </style>
 </head>
 <body>
-    <header>
+     <header>
         <nav>
             <a href="{% url 'index' %}">Inicio |</a>
             <a href="{% url 'upload_inmueble' %}">Añadir inmueble |</a>
@@ -22,27 +39,34 @@
             <a href="#">Mi perfil |</a>
         </nav>
         <section class="textos-header">
-            <h1>CARRITO DE COMPRAS</h1>
+            <h1>EDITAR DOMICILIARIO</h1>
         </section>
         <div class = "wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
     </header>
     <main>
-        <center>
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                <table class="w-50 table table-light">
-                    {% for field in upload_form %}
-                        <tr>
-                            <th>{{ field.label }}</th>
-                            <td>{{ field }}</td>
-                        </tr>
-                    {% endfor %}
-                </table>
-                <button type="submit" class="btn btn-lg btn-primary">
-                    Guardar
-                </button>
-            </form>
-        </center>
+        <table>
+          <tr>
+            <th>ID EMPLEADO</th>
+            <th>NOMBRE</th>
+            <th>APELLIDO</th>
+            <th>CEDULA_EMPLEADO</th>
+            <th>NOMBRE CARGO</th>
+            <th>AÑADIR</th>
+            <th>BORRAR</th>
+          </tr>
+        {% for domiciliario in shelf %}
+          <tr>
+            <td>{{ domiciliario.id_empleado }}</td>
+            <td>{{ domiciliario.nombre }}</td>
+            <td>{{ domiciliario.apellido }}</td>
+            <td>{{ domiciliario.cedula_empleado }}</td>
+            <td>{{ domiciliario.nom_cargo.nom_cargo }}</td>
+            <td><a class="btn btn-primary" href="update/{{ domiciliario.id_empleado }}" role="button">Actualizar</a></td>
+            <td><a class="btn btn-primary" href="delete/{{ domiciliario.id_empleado }}" role="button">Borrar</a></td>
+          </tr>
+        {% endfor %}
+        </table>
+
     </main>
     <footer>
         <div class="contenedor-footer">

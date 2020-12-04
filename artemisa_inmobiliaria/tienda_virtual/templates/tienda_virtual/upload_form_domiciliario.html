@@ -22,7 +22,7 @@
             <a href="#">Mi perfil |</a>
         </nav>
         <section class="textos-header">
-            <h1>CARRITO DE COMPRAS</h1>
+            <h1>AÑADIR DOMICILIARIO</h1>
         </section>
         <div class = "wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
     </header>
@@ -31,7 +31,7 @@
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <table class="w-50 table table-light">
-                    {% for field in upload_form %}
+                    {% for field in upload_dom_form %}
                         <tr>
                             <th>{{ field.label }}</th>
                             <td>{{ field }}</td>
@@ -39,7 +39,7 @@
                     {% endfor %}
                 </table>
                 <button type="submit" class="btn btn-lg btn-primary">
-                    Guardar
+                    Guardar Domiciliario
                 </button>
             </form>
         </center>
