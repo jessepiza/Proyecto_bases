@@ -324,8 +324,7 @@ def carrito(request):
     if request.method == 'POST':
         upload = CarritoCreate(request.POST, request.FILES)
         if upload.is_valid():
-            upload.save()
-            return redirect('ventas')
+            return redirect('gracias')
         else:
             return HttpResponse('Los datos a cargar son inválidos.')
     else:
@@ -354,6 +353,9 @@ def user_login(request):
     else:
         form = LoginForm()
     return render(request, 'account/login.html', {'form': form})
+
+def gracias(request):
+    return render(request, 'tienda_virtual/gracias.html')   
 
 def signup(request):
     if request.method == 'POST':

@@ -20,8 +20,8 @@ class CargosEmpleado(models.Model):
 
 
 class CarritosCompra(models.Model):
-    id_carrito = models.SmallAutoField(db_column='Id_carrito', primary_key=True)  # Field name made lowercase.
     id_inmueble = models.ForeignKey('Inmuebles', models.DO_NOTHING,db_column='Id_inmueble')  # Field name made lowercase.
+    id_carrito = models.SmallAutoField(db_column='Id_carrito', primary_key=True)  # Field name made lowercase.
     num_item = models.SmallIntegerField(db_column='Num_item', default=1)  # Field name made lowercase.
     fecha_ingreso = models.DateField(db_column='Fecha_ingreso', default=date.today)  # Field name made lowercase.
     fecha_caducidad = models.DateField(db_column='Fecha_caducidad', default=date.today)  # Field name made lowercase.

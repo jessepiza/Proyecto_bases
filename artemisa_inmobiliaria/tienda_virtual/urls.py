@@ -32,6 +32,7 @@ urlpatterns = [
     path('editar_inmueble/', views.editar_inmueble, name ='editar_inmueble'),
     path('editar_domiciliario/', views.editar_domiciliario, name ='editar_domiliciario'),
     path('ventas/', views.ventas, name = 'ventas'),
+    path('gracias/', views.gracias, name = 'gracias'),
 
     # rutas de cambio de contraseña
     # rutas de cambio de contraseña
